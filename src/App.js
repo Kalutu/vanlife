@@ -18,14 +18,14 @@ export default function App() {
       <Routes>
           <Route element={<Layout/>}>
             <Route path="/" element={<Home />}/>
-            <Route path="/about" element={<About />}/>
-            <Route path="/vans" element={<Vans />}/>
-            <Route path="/vans/:id" element={<VanDetail />}/>
+            <Route path="about" element={<About />}/>
+            <Route path="vans" element={<Vans />}/>
+            <Route path="vans/:id" element={<VanDetail />}/>
             
-            <Route path="/host" element={<HostLayout />}>
-              <Route path="/host" element={<Dashboard />}/>
-              <Route path="/host/income" element={<Income />}/>
-              <Route path="/host/reviews" element={<Reviews/>}/>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<Dashboard />}/>
+              <Route path="income" element={<Income />}/>
+              <Route path="reviews" element={<Reviews/>}/>
             </Route>
           </Route>
       </Routes>
