@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { 
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route 
+} from "react-router-dom";
 import Home from "./Pages/Home";
 import About from './Pages/About';
 import NotFound from "./Pages/NotFound";
@@ -19,9 +24,7 @@ import "./server"
 import "./styles.css"
 
 export default function App() {
-  return (
-    <BrowserRouter>     
-      <Routes>
+  const router = createBrowserRouter(createRoutesFromElements(
           <Route element={<Layout/>}>
             <Route path="/" element={<Home />}/>
             <Route path="about" element={<About />}/>
@@ -41,7 +44,8 @@ export default function App() {
             </Route>
             <Route path="*" element={<NotFound/>}/>
           </Route>
-      </Routes>
-  </BrowserRouter>
+  ))
+  return (
+    <RouterProvider router={router}/>
   );
 }
