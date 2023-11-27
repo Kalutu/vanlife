@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from './Pages/About';
+import NotFound from "./Pages/NotFound";
 import Vans from "./Pages/Vans/Vans";
 import VanDetail from "./Pages/Vans/VanDetail";
 import Dashboard from "./Pages/Hosts/Dashboard";
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="photos" element={<HostVanPhotos/>}/>
               </Route>
             </Route>
+            <Route path="*" element={<NotFound/>}/>
           </Route>
       </Routes>
   </BrowserRouter>
