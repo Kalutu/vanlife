@@ -18,6 +18,7 @@ import HostVanInfo from "./Pages/Hosts/HostVanInfo";
 import HostVanPricing from "./Pages/Hosts/HostVanPricing";
 import HostVanPhotos from "./Pages/Hosts/HostVanPhotos";
 import Reviews from "./Pages/Hosts/Reviews";
+import Login from "./Pages/Login";
 import Layout from "./Components/Layout";
 import HostLayout from "./Components/HostLayout";
 import Error from "./Components/Error";
@@ -29,6 +30,7 @@ export default function App() {
           <Route element={<Layout/>}>
             <Route path="/" element={<Home />} errorElement={<Error/>}/>
             <Route path="about" element={<About />}/>
+            <Route path="login" element={<Login />}/>
             <Route 
               path="vans" 
               element={<Vans />} 
