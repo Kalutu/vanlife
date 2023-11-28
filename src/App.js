@@ -9,11 +9,11 @@ import Home from "./Pages/Home";
 import About from './Pages/About';
 import NotFound from "./Pages/NotFound";
 import Vans, {loader as vansLoader} from "./Pages/Vans/Vans";
-import VanDetail from "./Pages/Vans/VanDetail";
+import VanDetail,  {loader as vansDetailLoader} from "./Pages/Vans/VanDetail";
 import Dashboard from "./Pages/Hosts/Dashboard";
 import Income from "./Pages/Hosts/Income";
-import HostVans from "./Pages/Hosts/HostVans";
-import HostVanDetail from "./Pages/Hosts/HostVanDetail";
+import HostVans, {loader as hostVansLoader} from "./Pages/Hosts/HostVans";
+import HostVanDetail, {loader as hostVansDetailLoader} from "./Pages/Hosts/HostVanDetail";
 import HostVanInfo from "./Pages/Hosts/HostVanInfo";
 import HostVanPricing from "./Pages/Hosts/HostVanPricing";
 import HostVanPhotos from "./Pages/Hosts/HostVanPhotos";
@@ -36,14 +36,26 @@ export default function App() {
               element={<Vans />} 
               loader={vansLoader}
             />
-            <Route path="vans/:id" element={<VanDetail />}/>
+            <Route 
+              path="vans/:id" 
+              element={<VanDetail />}
+              loader={vansDetailLoader}
+            />
             
             <Route path="host" element={<HostLayout />}>
               <Route index element={<Dashboard />}/>
               <Route path="income" element={<Income />}/>
               <Route path="reviews" element={<Reviews/>}/>
-              <Route path="vans" element={<HostVans />}/>
-              <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route 
+                path="vans" 
+                element={<HostVans/>}
+                loader={hostVansLoader}
+              />
+              <Route 
+                path="vans/:id" 
+                element={<HostVanDetail />}
+                loader={hostVansDetailLoader}
+              >
                 <Route index element={<HostVanInfo/>}/>
                 <Route path="pricing" element={<HostVanPricing/>}/>
                 <Route path="photos" element={<HostVanPhotos/>}/>
