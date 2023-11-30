@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, useParams, useLocation, useLoaderData } from "react-router-dom"
-import { getVans } from "../../api"
+import { getVan } from "../../api"
 
 export function loader({ params }) {
-    return getVans(params.id)
+    return getVan(params.id)
 }
 
 export default function VanDetail() {
@@ -19,9 +19,7 @@ export default function VanDetail() {
                 to={`..${search}`}
                 relative="path"
                 className="back-button"
-            >
-                &larr; <span>Back to {type} vans</span>
-            </Link>
+            >&larr; <span>Back to {type} vans</span></Link>
 
             <div className="van-detail">
                 <img alt={van.name} src={van.imageUrl} />
