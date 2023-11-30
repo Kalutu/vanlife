@@ -4,7 +4,7 @@ Welcome to the VanLife App, where adventure meets convenience on the open road. 
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/vanlife-app.git`
+1. Clone the repository: `git clone https://github.com/Kalutu/vanlife`
 2. Navigate to the project directory: `cd vanlife`
 3. Install dependencies: `npm install`
 4. Start the app: `npm start`
